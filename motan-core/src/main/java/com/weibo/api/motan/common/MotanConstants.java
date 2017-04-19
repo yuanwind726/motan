@@ -48,6 +48,7 @@ public class MotanConstants {
     public static final String SCOPE_LOCAL = "local";
     public static final String SCOPE_REMOTE = "remote";
     public static final String REGISTRY_PROTOCOL_LOCAL = "local";
+    public static final String REGISTRY_PROTOCOL_DIRECT = "direct";
     public static final String REGISTRY_PROTOCOL_ZOOKEEPER = "zookeeper";
     public static final String PROTOCOL_INJVM = "injvm";
     public static final String PROTOCOL_MOTAN = "motan";
@@ -66,6 +67,8 @@ public class MotanConstants {
     public static final String DEFAULT_CHARACTER = "utf-8";
     public static final int SLOW_COST = 50; // 50ms
     public static final int STATISTIC_PEROID = 30; // 30 seconds
+    public static final String ASYNC_SUFFIX = "Async";// suffix for async call.
+    
     /**
      * netty channel constants start
      **/

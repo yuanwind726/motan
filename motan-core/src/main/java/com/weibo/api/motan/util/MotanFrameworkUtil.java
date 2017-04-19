@@ -112,8 +112,12 @@ public class MotanFrameworkUtil {
      * @return
      */
     public static String getFullMethodString(Request request) {
-        return getGroupFromRequest(request) + "_" + request.getInterfaceName() + "." + request.getMethodName() + "("
+        return request.getInterfaceName() + "." + request.getMethodName() + "("
                 + request.getParamtersDesc() + ")";
+    }
+    
+    public static String getGroupMethodString(Request request){
+        return getGroupFromRequest(request) + "_" + getFullMethodString(request);
     }
 
 
@@ -250,6 +254,13 @@ public class MotanFrameworkUtil {
         RegistryConfig local = new RegistryConfig();
         local.setRegProtocol("local");
         return local;
+    }
+    
+    public static String removeAsyncSuffix(String path){
+        if(path != null && path.endsWith(MotanConstants.ASYNC_SUFFIX)){
+            return path.substring(0, path.length() - MotanConstants.ASYNC_SUFFIX.length());
+        }
+        return path;
     }
     
     
